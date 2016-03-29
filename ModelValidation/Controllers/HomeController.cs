@@ -10,7 +10,7 @@ namespace ModelValidation.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly Logger _nLogger = LogManager.GetCurrentClassLogger();
+        private readonly Logger _logger = LogManager.GetCurrentClassLogger();
         public ViewResult MakeBooking()
         {
             return View(new Appointment {Date = DateTime.Now});
@@ -20,7 +20,7 @@ namespace ModelValidation.Controllers
         {
             if (ModelState.IsValid) //Server 端驗證
             {
-                _nLogger.Debug($"ModelState.IsValid = {ModelState.IsValid}");
+                _logger.Debug($"ModelState.IsValid = {ModelState.IsValid}");
                 return View("Completed", appt);
             }
             else
