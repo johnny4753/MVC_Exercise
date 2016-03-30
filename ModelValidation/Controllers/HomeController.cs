@@ -32,7 +32,7 @@ namespace ModelValidation.Controllers
 
         public ViewResult MakePerson()
         {
-            return View(new MakePersonViewModel {PhoneNumber = "09123456"});
+            return View(new MakePersonViewModel {Email = "123@abc.com"});
         }
         [HttpPost]
         public ViewResult MakePerson(MakePersonViewModel person)

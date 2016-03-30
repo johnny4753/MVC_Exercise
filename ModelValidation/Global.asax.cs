@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using FluentValidation.Mvc;
 using StackExchange.Profiling;
 using StackExchange.Profiling.EntityFramework6;
 
@@ -19,6 +20,7 @@ namespace ModelValidation
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
+            FluentValidationModelValidatorProvider.Configure();
             MiniProfilerEF6.Initialize();
         }
 
