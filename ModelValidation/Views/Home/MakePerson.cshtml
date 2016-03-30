@@ -1,0 +1,17 @@
+﻿@model ModelValidation.Models.MakePersonViewModel
+
+@{
+    ViewBag.Title = "MakePerson";
+}
+
+<h4>Make a Person</h4>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary()
+    <p>Id: @Html.EditorFor(m => m.Id)</p>
+    <p>Name: @Html.EditorFor(m => m.Name)</p>
+    <p>PhoneNumber: @Html.EditorFor(m => m.PhoneNumber)</p>
+    <p>@Html.EditorFor(m => m.TermsAccepted) I accept the terms & conditions</p>
+    <input type="submit" value="Make Person" />
+}

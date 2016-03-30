@@ -29,10 +29,27 @@ namespace ModelValidation.Controllers
             }
             //return View("Completed", appt);
         }
+
+        public ViewResult MakePerson()
+        {
+            return View(new MakePersonViewModel {PhoneNumber = "09123456"});
+        }
+        [HttpPost]
+        public ViewResult MakePerson(MakePersonViewModel person)
+        {
+            if (ModelState.IsValid) //Server 端驗證
+            {
+                return View("CompletedPerson", person);
+            }
+            else
+            {
+                return View();
+            }
+        }
         public ActionResult Index()
         {
             //return View();
-            return RedirectToAction("MakeBooking");
+            return RedirectToAction("MakePerson");
         }
 
         public ActionResult About()
