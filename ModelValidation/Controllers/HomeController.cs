@@ -31,7 +31,8 @@ namespace ModelValidation.Controllers
         }
         public ActionResult Index()
         {
-            return View();
+            //return View();
+            return RedirectToAction("MakeBooking");
         }
 
         public ActionResult About()
