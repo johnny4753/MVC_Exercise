@@ -1,5 +1,9 @@
-﻿namespace ModelValidation.Models
+﻿using FluentValidation.Attributes;
+using ModelValidation.Infrastructure;
+
+namespace ModelValidation.Models
 {
+    [Validator(typeof(MakePersonViewModelValidator))]
     public class MakePersonViewModel
     {
         public int Id { get; set; }
