@@ -8,10 +8,14 @@
 
 @using (Html.BeginForm())
 {
-    @Html.ValidationSummary()
+    @*@Html.ValidationSummary()*@
     <p>Id: @Html.EditorFor(m => m.Id)</p>
+    <p>@Html.ValidationMessageFor(m=>m.Id)</p>
     <p>Name: @Html.EditorFor(m => m.Name)</p>
+    <p>@Html.ValidationMessageFor(m => m.Name)</p>
     <p>Email: @Html.EditorFor(m => m.Email)</p>
+    <p>@Html.ValidationMessageFor(m => m.Email)</p>
     <p>@Html.EditorFor(m => m.TermsAccepted) I accept the terms & conditions</p>
+    <p>@Html.ValidationMessageFor(m => m.TermsAccepted)</p>
     <input type="submit" value="Make Person" />
 }
