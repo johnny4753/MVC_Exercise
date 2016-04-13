@@ -1,4 +1,5 @@
-﻿using FluentValidation.Attributes;
+﻿using System;
+using FluentValidation.Attributes;
 using ModelValidation.Infrastructure;
 
 namespace ModelValidation.Models
@@ -8,6 +9,7 @@ namespace ModelValidation.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
+        public DateTime DateTime { get; set; }
         public string Email { get; set; }
         public bool TermsAccepted { get; set; }
 

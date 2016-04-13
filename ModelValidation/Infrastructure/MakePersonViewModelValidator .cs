@@ -10,6 +10,7 @@ namespace ModelValidation.Infrastructure
         {
             RuleFor(x => x.Id).NotNull().Must((makePersonViewModel,id)=>id <= makePersonViewModel.Limit.LimitId).WithMessage("Id should be <= limit");
             RuleFor(x => x.Name).NotNull().Length(3, 5);
+            RuleFor(x => x.DateTime).NotNull();
             RuleFor(x => x.Email).NotNull().EmailAddress().WithLocalizedMessage(()=>Resource.EmailErrorMessage);
             RuleFor(x => x.TermsAccepted).Must(termsAccepted => termsAccepted).WithMessage("Terms should be accepted.");
             
