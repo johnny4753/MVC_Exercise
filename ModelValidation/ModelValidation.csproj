@@ -226,6 +226,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\FutureDateAttribute.cs" />
+    <Compile Include="Infrastructure\StudentValidator.cs" />
     <Compile Include="Infrastructure\MakePersonViewModelValidator .cs" />
     <Compile Include="Infrastructure\MustBeTrueAttribute.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -233,6 +234,7 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MakePersonViewModel.cs" />
+    <Compile Include="Infrastructure\TesterValidator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\Resource.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -311,6 +313,7 @@
     <Content Include="Views\Home\Completed.cshtml" />
     <Content Include="Views\Home\MakePerson.cshtml" />
     <Content Include="Views\Home\CompletedPerson.cshtml" />
+    <Content Include="Views\Home\EditorTemplates\Student.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Web.Mvc;
 using ModelValidation.Models;
 using NLog;
@@ -29,7 +30,11 @@ namespace ModelValidation.Controllers
 
         public ViewResult MakePerson()
         {
-            return View(new MakePersonViewModel {Email = "123@abc.com"});
+            var viewModel = new MakePersonViewModel
+            {
+                Email = "123@abc.com",
+            };
+            return View(viewModel);
         }
         [HttpPost]
         public ViewResult MakePerson(MakePersonViewModel person)
@@ -38,11 +43,9 @@ namespace ModelValidation.Controllers
             {
                 return View("CompletedPerson", person);
             }
-            else
-            {
-                return View();
-            }
+            return View(person);
         }
+
         public ActionResult Index()
         {
             //return View();

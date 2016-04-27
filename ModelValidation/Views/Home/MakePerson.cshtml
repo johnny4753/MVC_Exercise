@@ -19,5 +19,10 @@
     <p>@Html.ValidationMessageFor(m => m.Email)</p>
     <p>@Html.EditorFor(m => m.TermsAccepted) I accept the terms & conditions</p>
     <p>@Html.ValidationMessageFor(m => m.TermsAccepted)</p>
+    <p>TestId:@Html.EditorFor(m => m.Tester.TestId)</p>
+    <p>@Html.ValidationMessageFor(m => m.Tester.TestId)</p>
+
+        @Html.EditorFor(m => m.Students)<br />
+    
     <input type="submit" value="Make Person" />
 }
