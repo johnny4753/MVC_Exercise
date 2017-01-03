@@ -8,7 +8,7 @@ namespace ModelValidation.Infrastructure
     {
         public StudentValidator()
         {
-            RuleFor(x => x.Id).GreaterThanOrEqualTo(99);
+            RuleFor(x => x.Id).GreaterThanOrEqualTo(100);
 
         }
     }
