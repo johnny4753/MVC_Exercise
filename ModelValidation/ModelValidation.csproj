@@ -44,6 +44,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ByteSizeLib, Version=1.2.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ByteSize.1.2.4\lib\net45\ByteSizeLib.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="FluentValidation, Version=6.2.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\FluentValidation.6.2.1.0\lib\Net45\FluentValidation.dll</HintPath>
       <Private>True</Private>
@@ -220,17 +224,21 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ExerciseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Infrastructure\Exercise\ExerciseUploadViewModelValidator.cs" />
+    <Compile Include="Infrastructure\Exercise\HttpPostedFileBaseValidator.cs" />
     <Compile Include="Infrastructure\FutureDateAttribute.cs" />
     <Compile Include="Infrastructure\StudentValidator.cs" />
     <Compile Include="Infrastructure\MakePersonViewModelValidator .cs" />
     <Compile Include="Infrastructure\MustBeTrueAttribute.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Appointment.cs" />
+    <Compile Include="Models\ExerciseUploadViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MakePersonViewModel.cs" />
@@ -314,6 +322,7 @@
     <Content Include="Views\Home\MakePerson.cshtml" />
     <Content Include="Views\Home\CompletedPerson.cshtml" />
     <Content Include="Views\Home\EditorTemplates\Student.cshtml" />
+    <None Include="Views\Exercise\Upload.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

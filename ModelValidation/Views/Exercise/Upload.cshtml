@@ -1,0 +1,13 @@
+﻿@model ModelValidation.Models.ExerciseUploadViewModel
+<br/>
+<style >
+    
+</style>
+
+<h2>Upload Exercise</h2>
+@using (Html.BeginForm("Upload", "Exercise", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <input type="file" name="HttpPostedFile" id="file" />
+    <input type="submit" value="上傳"/>
+    @Html.ValidationSummary();
+}
