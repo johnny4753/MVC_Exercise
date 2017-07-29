@@ -1,6 +1,6 @@
-﻿using System.IO;
+﻿using ModelValidation.Models;
+using System.IO;
 using System.Web.Mvc;
-using ModelValidation.Models;
 
 namespace ModelValidation.Controllers
 {
@@ -24,6 +24,25 @@ namespace ModelValidation.Controllers
             var path = Path.Combine(Server.MapPath("~/App_Data"), fileName);
             postedFile.SaveAs(path);
             return View();
+        }
+
+        public ActionResult AjaxGetMessage()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult AjaxGetMessage(string myInput)
+        {
+            if (myInput != "Hello!")
+            {
+                TempData["ResponseMessage"] = "請輸入 \"Hello!\"";
+            }
+            else
+            {
+                TempData["ResponseMessage"] = "Hello! This is Ajax Call";
+            }
+            return PartialView("_AjaxGetMessage");
         }
     }
 }

@@ -1,0 +1,19 @@
+﻿<h2 align="center">Hello!</h2>
+<p>Please input "Hello!"</p>
+
+@*  讓 Ajax Form 標籤真正擁有 Ajax 能力的是這行↓↓↓(即載入 jquery.unobtrusive-ajax.min.js)，
+    一般建議放在主板頁面。
+    P.S. 此 js 需透過 nuget 安裝
+          (搜尋 unobtrusive-ajax )
+*@
+<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+@using (Ajax.BeginForm("AjaxGetMessage", "Exercise", new AjaxOptions { UpdateTargetId = "targetDiv" }))
+{
+    @Html.TextArea("myInput", new { style = "width:100%;height:200px;" });
+    <br /><br />
+    <input type="submit" value="Ajax Get Message" />
+}
+<div id="targetDiv" style="width: 100%; margin-top: 20px; padding: 10px;">
+    <p>(Here will be updated by ajax call, and will not refresh whole page)</p>
+    @* Ajax Form submit後回來的東西將會載入到這裡 *@
+</div>
