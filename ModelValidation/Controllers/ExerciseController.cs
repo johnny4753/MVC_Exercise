@@ -1,6 +1,8 @@
-﻿using ModelValidation.Models;
+﻿using System.Collections.Generic;
+using ModelValidation.Models;
 using System.IO;
 using System.Web.Mvc;
+using ModelValidation.Models.ViewModels;
 
 namespace ModelValidation.Controllers
 {
@@ -43,6 +45,35 @@ namespace ModelValidation.Controllers
                 TempData["ResponseMessage"] = "Hello! This is Ajax Call";
             }
             return PartialView("_AjaxGetMessage");
+        }
+
+        public ActionResult JqueryAjaxGetCustomers()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ActionName(nameof(JqueryAjaxGetCustomers))]
+        public ActionResult JqueryAjaxCustomers()
+        {
+            var customerViewModels = new List<CustomerViewModel>
+            {
+                new CustomerViewModel
+                {
+                    CustomerID = "John",
+                    City = "台北",
+                    CompanyName = "南京資訊",
+                    Phone = "0912345678"
+                },
+                new CustomerViewModel
+                {
+                    CustomerID = "Tom",
+                    City = "台中",
+                    CompanyName = "新人類",
+                    Phone = "12345678"
+                }
+            };
+            return Json(customerViewModels);
         }
     }
 }

@@ -1,0 +1,39 @@
+﻿@{
+    ViewBag.Title = "JqueryAjaxGetCustomers";
+}
+<script>
+    function GetCustomersOnClick() {
+        $.ajax({
+            type: 'POST',
+            url: '@Url.Action("JqueryAjaxGetCustomers", "Exercise")',
+            success: function (customers) {
+                $("#tbCustomers").empty();
+                for (var i = 0; i < customers.length; i++) {
+                    $("#tbCustomers").append("<tr>" +
+                        "<td>" + customers[i].CustomerID + "</td>" +
+                        "<td>" + customers[i].City + "</td>" +
+                        "<td>" + customers[i].CompanyName + "</td>" +
+                        "<td>" + customers[i].Phone + "</td>" +
+                        "</tr>"
+                    );
+                }
+            }
+        });
+    }
+</script>
+<div align="center">
+    <h2>JqueryAjaxGetCustomers</h2>
+    <input type="button" id="BtnGetCustomers" value="GetCustomers" onclick="GetCustomersOnClick()" />
+
+    <table>
+        <thead>
+            <tr>
+                <td style="width:100px;">CustomerID</td>
+                <td style="width:70px;">City</td>
+                <td style="width:140px;">CompanyName</td>
+                <td style="width:100px;">Phone</td>
+            </tr>
+        </thead>
+        <tbody id="tbCustomers"></tbody>
+    </table>
+</div>
